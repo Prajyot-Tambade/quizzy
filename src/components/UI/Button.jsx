@@ -19,7 +19,7 @@ export default function Button({
     ): 
     
     (
-        <button type={type} className={`${className} bg-black px-8 py-2 rounded-lg cursor-pointer ${hoverStyle} ${textColor} ${border}`} {...props}>
+        <button type={type} className={`${className} bg-black px-8 py-2 rounded-lg cursor-pointer disabled:bg-black/10 disabled:border-none disabled:text-black/30 ${hoverStyle} ${textColor} ${border}`} {...props}>
             {children}
         </button>
     );

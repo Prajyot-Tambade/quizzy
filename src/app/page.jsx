@@ -23,7 +23,7 @@ export default function Home() {
         </div>
 
         <footer>
-          <p className="text-center" >Design and Developed by <Link href="#" className='underline'>Prajyot Tambade</Link></p>
+          <p className="text-center" >Design and Developed by <Link href="https://github.com/Prajyot-Tambade" className='underline'>Prajyot Tambade</Link></p>
         </footer>
 			</Container>
 		</div>

@@ -11,7 +11,7 @@ const SignupPage = () => {
 	const {
       register,
       handleSubmit,
-      formState: { errors, isLoading },
+      formState: { errors, isSubmitting },
       watch,
     } = useForm();
   
@@ -46,7 +46,7 @@ const SignupPage = () => {
       <div>
         <h1 className='text-2xl font-bold'>Get started</h1>
         <p className='mt-2 text-gray-500'>
-          Just one step away from achieving your goals
+          Just one step away from start creating quizzes
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
   
@@ -137,9 +137,9 @@ const SignupPage = () => {
               <Button
                 type='submit'
                 className='mt-8 my-auto cursor-pointer w-full rounded-xl'
-                disabled={isLoading}
+                disabled={isSubmitting}
               >
-                Register
+                {!isSubmitting ? 'Sign Up' : 'Signing up...'}
               </Button>
               <div className='text-center'>
                 <p className='text-gray-500 mt-4'>

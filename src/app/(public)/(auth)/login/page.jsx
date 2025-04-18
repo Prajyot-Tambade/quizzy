@@ -13,7 +13,7 @@ const LoginForm = () => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
+		formState: { errors, isSubmitting },
 	} = useForm();
 
 	const [error, setError] = useState(null);
@@ -51,8 +51,10 @@ const LoginForm = () => {
 						{/* Email field */}
 						<Input
 							label='Email: '
+							name='email'
 							placeholder='john@doe.com'
 							type='email'
+							autoComplete="email"
 							{...register('email', {
 								required: 'Email is required',
 								pattern: {
@@ -90,9 +92,10 @@ const LoginForm = () => {
 						{/* Submit button */}
 						<Button
 							type='submit'
+							disabled={isSubmitting}
 							className='mt-8 my-auto cursor-pointer w-full rounded-xl'
 						>
-							Login
+							{!isSubmitting? 'Login' : 'Logging in...'}
 						</Button>
 						<div className='text-center'>
 							<p className='text-gray-500 mt-4'>
